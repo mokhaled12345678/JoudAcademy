@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+    {% load static %}
+    {% load i18n %}
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Joud Islamic Academy, ​Frequently Asked Questions:">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'css/FAQ.css' %}" media="screen">
+    {% if LANGUAGE_CODE == 'ar' %}
+      <link rel="stylesheet" href="{% static 'css/ar.css' %}">
+    {% endif %}
+    <script class="u-script" type="text/javascript" src="{% static 'js/jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/nicepage.js' %}" defer=""></script>
+    <meta name="generator" content="Nicepage 4.7.1, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    <style>
+      .u-nav-item a.u-nav-link, .menu-collapse a.u-nav-link {
+        padding: 10px 20px;
+      }
+
+      .header-div a {
+        width: 100px;
+        height: 100px;
+        display: inline;
+      }
+
+      .header-div img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .header-div h1, .header-div a, .header-div li, .header-div li > form {
+        display: inline;
+        margin-top: 10px;
+      }
+
+      .header-div button{
+        padding: 10px;
+        width: 75px;
+        border: 2px solid gold;
+        color: gold;
+        background-color: #fff;
+      }
+
+      .header-div { 
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+      @media (max-width: 785px) {
+        .header-div{
+          justify-content: center;
+          align-items: center;
+        }
+        }
+    </style>
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "Joud Islamic Academy",
+		"logo": "{% static 'images/JoudLogo31.gif' %}"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="FAQ">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body u-xl-mode">
+    <header class="u-clearfix u-header u-header" id="sec-db29">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="header-div">
+          <a href="{% url 'home' %}" data-image-width="782" data-image-height="790">
+            <img src="{% static 'images/JoudLogo31.gif' %}">
+          </a>
+          <h1> Joud Islamic Academy</h1>
+          <li>
+  <form action="{% url 'set_language' %}" method="post">
+    {% csrf_token %}
+    {% get_current_language as LANGUAGE_CODE %}
+    <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}">
+    {% if LANGUAGE_CODE == 'ar' %}
+      <button type='submit' name='language' value='en'>
+        <span class="label"></span>English
+      </button>
+    {% else %}
+      <button type='submit' name='language' value='ar'>
+        <span class="label"></span>عربي
+      </button>
+    {% endif %}
+  </form>
+</li>
+        </div>
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1.5rem;">
+            <a class="u-button-style u-nav-link" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'home' %}">{% trans 'Home' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'courses' %}">{% trans 'Courses' %}</a>
+<div class="u-nav-popup">
+<ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2">
+  {% for course in courses %}
+  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="Al-Qaida-Al-Nooraniya.html">{{ course.name }}</a></li>
+  {% endfor %}
+</ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'faq' %}">{% trans 'FAQ' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'register' %}" target="_blank">{% trans 'Registration and Fees' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'about' %}">{% trans 'About Us' %}</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link u-white">Organizational Structure</a>
+</li></ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'contact' %}">{% trans 'Contact Us' %}</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">{% trans 'Home' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'courses' %}">{% trans 'Courses' %}</a>
+<div class="u-nav-popup">
+<ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-5">
+  {% for course in courses %}
+  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="Al-Qaida-Al-Nooraniya.html">{{ course.name }}</a></li>
+  {% endfor %}
+</ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'faq' %}">{% trans 'FAQ' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'register' %}">{% trans 'Registration and Fees' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'about' %}">{% trans 'About Us' %}</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-6"><li class="u-nav-item"><a class="u-button-style u-nav-link">Organizational Structure</a>
+</li></ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'contact' %}">{% trans 'Contact Us' %}</a>
+</li></ul>
+            </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </div>
+        </nav>
+    </div></header>
+    <section class="u-clearfix u-grey-5 u-section-1" id="sec-1d70">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-gutter-10 u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout" style="">
+            <div class="u-layout-row" style="">
+              <div class="u-container-style u-layout-cell u-left-cell u-size-33 u-size-xs-60 u-layout-cell-1" src="">
+                <div class="u-container-layout u-container-layout-1">
+                  <h2 class="u-align-center u-text u-text-1" data-animation-name="customAnimationIn" data-animation-duration="1000"> Frequently Asked Questions:</h2>
+                </div>
+              </div>
+              <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-27 u-size-xs-60 u-layout-cell-2" src="">
+                <div class="u-container-layout u-valign-bottom u-container-layout-2" src="">
+                  <div class="u-image u-image-circle u-image-1" alt="" data-image-width="348" data-image-height="272"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-2" id="sec-ffee">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <p class="u-align-justify u-text u-text-1">
+          <br>
+          <span style="font-weight: 700;">{% trans 'How effective is online learning in comparison to in-class learning?' %}&nbsp;</span>
+          <br>{% trans 'Online courses offer more flexibility and' %} {% trans 'are ideal for people with a busy schedule' %}, {% trans 'while in-class education traditionally' %} {% trans 'has a more structured class schedule' %}. {% trans 'Some students may feel shy or intimidated in front of their peers' %} {% trans 'compared to the online environment.' %} &nbsp;<br>{% trans 'The most noted advantages for each method have been identified: Online' %}&nbsp;<br>* {% trans 'Convenience and flexibility' %}&nbsp;<br>* {% trans 'The individual is the focus' %}&nbsp;<br>* {% trans 'Global reach: anytime, anyplace conversations' %}&nbsp;<br>* {% trans 'Teaches self-motivation and self-discipline In-Class' %}&nbsp;<br>* {% trans 'Security of a longer-standing format.' %}&nbsp;<br>* {% trans 'More real face-to-face interaction' %}&nbsp;<br>* {% trans 'on-campus clubs and extracurricular activities.' %}&nbsp;<br>* {% trans 'Hands-on training for some professions.' %}&nbsp;<br>
+          <br>
+          <span style="font-weight: 700;">{% trans 'What is online Quran teaching?' %}&nbsp;</span>
+          <br>{% trans 'It is a 1 on 1 live web based meeting' %} {% trans 'with telecommunication application' %} {% trans 'that provides internet voice calls and' %} {% trans 'screen sharing between computers' %} , {% trans 'tablets and mobile devices' %}. {% trans 'It enables students to interact with real life teachers' %} {% trans 'from any computer with internet access' %}. {% trans 'By providing a human touch to islamic education' %}, {% trans 'we guide students personally in order to' %} {% trans 'learn The Holy Quran effectively' %} {% trans 'whilst providing an online learning experience' %} {% trans 'through online interactive technology' %}.&nbsp;<br>
+          <br>
+          <span style="font-weight: 700;">{% trans 'How quickly student can start?' %}&nbsp;</span>
+          <br>{% trans 'We will start offering our classes , In Shaa Allah' %}. {% trans 'Whence you apply you will be able to enroll for classes' %} {% trans 'within a week of getting accepted' %}.&nbsp;<br>
+          <span style="font-weight: 700;">
+            <br>Is online Quran teaching helpful?&nbsp;
+          </span>
+          <br>Our experience finds 1 to 1 online Quran teaching effective, engaging and useful.Try your free trial session under no obligation to form your own opinion about its usefulness.&nbsp;<br>
+          <br>
+          <span style="font-weight: 700;">Are you providing these lessons from a CD or software?&nbsp;</span>
+          <br>We are providing online teaching service. Our website is used to provide information for our services. Actual teaching is conducted by a live teacher at agreed upon time. You can read learning material and Quran lessons from our website.<br>
+          <br><b>What if we are not computer or internet expert users?&nbsp;</b>
+          <br>Our representative will guide you and your child through the basic installation of the software. It takes less than a minute to be online and start taking classes. You need very basic familiarity with a computer and internet. You do not need any computer expertise to take lessons.&nbsp;<br>
+          <br>
+          <span style="font-weight: 700;">Do you only teach Quran?&nbsp;</span>
+          <br>No, we also teach other islamic courses. please review our courses page.&nbsp;<br>
+          <span style="font-weight: 700;">
+            <br>What if I am waiting online and my tutor is not there?&nbsp;
+          </span>
+          <br>Please contact coordinator or call us on our phone number given in the website.&nbsp;<br>
+          <span style="font-weight: 700;">
+            <br>I want to learn Quran Online.&nbsp;
+          </span>
+          <br>Book Free Trial Now﻿
+        </p>
+      </div>
+    </section>
+    
+    
+    {% include 'UserView/footer.html' %}
+  </body>
+</html>

@@ -1,0 +1,176 @@
+.u-section-1 .u-sheet-1 {
+  min-height: 730px;
+}
+
+.u-section-1 .u-layout-wrap-1 {
+  margin: 70px 0;
+}
+
+.u-section-1 .u-layout-cell-1 {
+  min-height: 600px;
+}
+
+.u-section-1 .u-container-layout-1 {
+  box-shadow: 5px 5px 20px 0 rgba(0,0,0,0.4);
+  padding: 30px 60px;
+}
+
+.u-section-1 .u-image-1 {
+  height: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-image: url("images/imgbin-muslim-islam-boy-islam-reading-boy-kneeling-while-reading-book-kUJd10AiWjpPsHkZVpNJKed3e.jpg");
+  background-position: 50% 50%;
+}
+
+.u-section-1 .u-layout-cell-2 {
+  min-height: 600px;
+}
+
+.u-section-1 .u-container-layout-2 {
+  padding: 30px 60px;
+}
+
+.u-section-1 .u-text-1 {
+  margin: 0 30px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 100px;
+  }
+
+  .u-section-1 .u-layout-wrap-1 {
+    margin-right: initial;
+    margin-left: initial;
+  }
+
+  .u-section-1 .u-layout-cell-1 {
+    min-height: 495px;
+    background-position: 50% 50%;
+  }
+
+  .u-section-1 .u-image-1 {
+    width: auto;
+  }
+
+  .u-section-1 .u-layout-cell-2 {
+    min-height: 495px;
+  }
+
+  .u-section-1 .u-text-1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-layout-cell-1 {
+    min-height: 379px;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .u-section-1 .u-layout-cell-2 {
+    min-height: 100px;
+  }
+
+  .u-section-1 .u-container-layout-2 {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 390px;
+  }
+
+  .u-section-1 .u-layout-cell-1 {
+    min-height: 569px;
+  }
+
+  .u-section-1 .u-container-layout-1 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .u-section-1 .u-container-layout-2 {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 179px;
+  }
+
+  .u-section-1 .u-layout-cell-1 {
+    min-height: 358px;
+  }
+}.u-section-2 .u-sheet-1 {
+  min-height: 1962px;
+}
+
+.u-section-2 .u-text-1 {
+  font-size: 1.5rem;
+  margin: 71px 45px 0;
+}
+
+.u-section-2 .u-image-1 {
+  width: 520px;
+  height: 723px;
+  margin: 32px 13px 0 auto;
+}
+
+.u-section-2 .u-text-2 {
+  font-size: 1.5rem;
+  margin: -710px 45px 60px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-2 .u-text-1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-2 .u-image-1 {
+    margin-left: 45px;
+  }
+
+  .u-section-2 .u-text-2 {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-2 .u-image-1 {
+    margin-left: 20px;
+  }
+
+  .u-section-2 .u-text-2 {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-2 .u-sheet-1 {
+    min-height: 1712px;
+  }
+
+  .u-section-2 .u-image-1 {
+    width: 340px;
+    height: 473px;
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  .u-section-2 .u-text-2 {
+    margin-top: -460px;
+    margin-left: 0;
+  }
+}

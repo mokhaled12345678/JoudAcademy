@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load i18n %}
+    {% load static %}
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header class="u-clearfix u-header u-header" id="sec-db29">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="header-div">
+          <a href="{% url 'home' %}" data-image-width="782" data-image-height="790">
+            <img src="{% static 'images/JoudLogo31.gif' %}">
+          </a>
+          <h1> Joud Islamic Academy</h1>
+          <li>
+  <form action="{% url 'set_language' %}" method="post">
+    {% csrf_token %}
+    {% get_current_language as LANGUAGE_CODE %}
+    <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}">
+    {% if LANGUAGE_CODE == 'ar' %}
+      <button type='submit' name='language' value='en'>
+        <span class="label"></span>English
+      </button>
+    {% else %}
+      <button type='submit' name='language' value='ar'>
+        <span class="label"></span>عربي
+      </button>
+    {% endif %}
+  </form>
+</li>
+        </div>
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1.5rem;">
+            <a class="u-button-style u-nav-link" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'home' %}">{% trans 'Home' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'courses' %}">{% trans 'Courses' %}</a>
+<div class="u-nav-popup">
+<ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2">
+  {% for course in courses %}
+  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="Al-Qaida-Al-Nooraniya.html">{{ course.name }}</a></li>
+  {% endfor %}
+</ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'faq' %}">{% trans 'FAQ' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'register' %}" target="_blank">{% trans 'Registration and Fees' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'about' %}">{% trans 'About Us' %}</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link u-white">Organizational Structure</a>
+</li></ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'contact' %}">{% trans 'Contact Us' %}</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">{% trans 'Home' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'courses' %}">{% trans 'Courses' %}</a>
+<div class="u-nav-popup">
+<ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-5">
+  {% for course in courses %}
+  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="Al-Qaida-Al-Nooraniya.html">{{ course.name }}</a></li>
+  {% endfor %}
+</ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'faq' %}">{% trans 'FAQ' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'register' %}">{% trans 'Registration and Fees' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'about' %}">{% trans 'About Us' %}</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-6"><li class="u-nav-item"><a class="u-button-style u-nav-link">Organizational Structure</a>
+</li></ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'contact' %}">{% trans 'Contact Us' %}</a>
+</li></ul>
+            </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </div>
+        </nav>
+    </div></header>
+</body>
+</html>

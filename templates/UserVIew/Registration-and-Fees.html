@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+    {% load static %}
+    {% load i18n %}
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Joud Islamic Academy, ​Frequently Asked Questions:">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Registration and Fees</title>
+    <link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'css/Registration-and-Fees.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/register-style.css' %}"> 
+    {% if LANGUAGE_CODE == 'ar' %}
+      <link rel="stylesheet" href="{% static 'css/ar.css' %}">
+    {% endif %}
+    <script class="u-script" type="text/javascript" src="{% static 'js/jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/nicepage.js' %}" defer=""></script>
+    <meta name="generator" content="Nicepage 4.7.1, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+    
+    <style>
+      .u-nav-item a.u-nav-link, .menu-collapse a.u-nav-link {
+        padding: 10px 20px;
+      }
+    </style>
+    <style>
+      .u-nav-item a.u-nav-link, .menu-collapse a.u-nav-link {
+        padding: 10px 20px;
+      }
+
+      .header-div a {
+        width: 100px;
+        height: 100px;
+        display: inline;
+      }
+
+      .header-div img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .header-div h1, .header-div a, .header-div li, .header-div li > form {
+        display: inline;
+        margin-top: 10px;
+      }
+
+      .header-div button{
+        padding: 10px;
+        width: 75px;
+        border: 2px solid gold;
+        color: gold;
+        background-color: #fff;
+      }
+
+      .header-div { 
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+      @media (max-width: 785px) {
+        .header-div{
+          justify-content: center;
+          align-items: center;
+        }
+        }
+    </style>
+    
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "Joud Islamic Academy",
+		"logo": "images/JoudLogo31.gif"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Registration and Fees">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body u-xl-mode">
+    <header class="u-clearfix u-header u-header" id="sec-db29">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="header-div">
+          <a href="{% url 'home' %}" data-image-width="782" data-image-height="790">
+            <img src="{% static 'images/JoudLogo31.gif' %}">
+          </a>
+          <h1> Joud Islamic Academy</h1>
+          <li>
+  <form action="{% url 'set_language' %}" method="post">
+    {% csrf_token %}
+    {% get_current_language as LANGUAGE_CODE %}
+    <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}">
+    {% if LANGUAGE_CODE == 'ar' %}
+      <button type='submit' name='language' value='en'>
+        <span class="label"></span>English
+      </button>
+    {% else %}
+      <button type='submit' name='language' value='ar'>
+        <span class="label"></span>عربي
+      </button>
+    {% endif %}
+  </form>
+</li>
+        </div>
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1.5rem;">
+            <a class="u-button-style u-nav-link" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'home' %}">{% trans 'Home' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'courses' %}">{% trans 'Courses' %}</a>
+<div class="u-nav-popup">
+<ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2">
+  {% for course in courses %}
+  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'course' course.id %}">{{ course.name }}</a></li>
+  {% endfor %}
+</ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'faq' %}">{% trans 'FAQ' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'register' %}">{% trans 'Registration and Fees' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'about' %}">{% trans 'About Us' %}</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link u-white">Organizational Structure</a>
+</li></ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'contact' %}">{% trans 'Contact Us' %}</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">{% trans 'Home' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'courses' %}">{% trans 'Courses' %}</a>
+<div class="u-nav-popup">
+<ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-5">
+  {% for course in courses %}
+  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'course' course.id %}">{{ course.name }}</a></li>
+  {% endfor %}
+</ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'faq' %}">{% trans 'FAQ' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'register' %}">{% trans 'Registration and Fees' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'about' %}">{% trans 'About Us' %}</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-6"><li class="u-nav-item"><a class="u-button-style u-nav-link">Organizational Structure</a>
+</li></ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'contact' %}">{% trans 'Contact Us' %}</a>
+</li></ul>
+            </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </div>
+        </nav>
+    </div></header>
+    <section class="u-clearfix u-grey-5 u-section-1" id="sec-1d70">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-gutter-10 u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout" style="">
+            <div class="u-layout-row" style="">
+              <div class="u-container-style u-layout-cell u-left-cell u-size-33 u-size-xs-60 u-layout-cell-1" src="">
+                <div class="u-container-layout u-container-layout-1">
+                  <h2 class="u-align-center u-text u-text-1">Free Registration&nbsp;</h2>
+                </div>
+              </div>
+              <div class="u-align-left u-container-style u-layout-cell u-right-cell u-size-27 u-size-xs-60 u-layout-cell-2" src="">
+                <div class="u-container-layout u-valign-bottom u-container-layout-2" src="">
+                  <div class="u-image u-image-circle u-image-1" alt="" data-image-width="348" data-image-height="272"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-2" id="sec-ffee">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <h4 class="u-align-justify u-text u-text-1"><b>Register for trial classes&nbsp;</b>
+          <br>Please enter your contact information below and we will get back to you via Email or&nbsp;Phone&nbsp;<br>for Trial classes.<br>If you like you can call us or chat with us for more queries.&nbsp;<br>Start your Free trial class at the given time.&nbsp;<br>If you are satisfied with 3 trial classes, you will be registered as a regular student.
+        </h4>
+      </div>
+    </section>
+    <section class="u-align-center u-clearfix u-palette-1-dark-1 u-section-3" id="carousel_138c">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-container-style u-group u-radius-50 u-shape-round u-white u-group-1">
+          <div class="u-container-layout u-container-layout-1">
+            <div class="login-form">
+              <i class="fas fa-times" id="form-close" onclick="hideform()"></i>
+              {% if page == 'login' %}
+            <form action="" method="post">
+                {% csrf_token %}
+                <h3>login</h3>
+                <label for="username">Email:</label>
+                <input type="text" class="box" name="username" placeholder="Enter your username">
+                <label for="password">Password:</label>
+                <input type="password" class="box" name="password" placeholder="Enter your password">
+                {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li {% if message.tags %} class="{{ message.tags }} error-message" style="color: red; font-size: 1rem;"{% endif %} >{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                <input type="submit" value="login now" class="btn">
+                <p>don't have acount? <a href="{% url 'register' %}">sign up</a></p>
+            </form>
+        {% else %}
+            <form method="POST">
+                {% csrf_token %}
+                {% for field in form %}
+                    <div class="form-group">
+                        {{ field.label_tag }}
+                        {{ field }}
+                        {% if field.errors %}
+                            <div class="alert alert-danger">
+                                {% for error in field.errors %}
+                                    <p class="error-message" style="color: red; font-size: 1.5rem;">{{ error|escape }}</p>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                {% endfor %}
+                <input type="submit" value="login now" class="btn">
+                <p>have acount? <a href="{% url 'login' %}">Log in</a></p>
+            </form>
+        {% endif %}
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-4" id="sec-8bb9">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-table u-table-responsive u-table-1">
+          <table class="u-table-entity">
+            <colgroup>
+              <col width="16.3%">
+              <col width="13.5%">
+              <col width="42.9%">
+              <col width="27.3%">
+            </colgroup>
+            <thead class="u-palette-4-base u-table-header u-table-header-1">
+              <tr style="height: 52px;">
+                <th class="u-border-4 u-border-palette-4-base u-table-cell"></th>
+                <th class="u-border-4 u-border-palette-4-base u-table-cell"></th>
+                <th class="u-align-center u-border-4 u-border-palette-4-base u-table-cell u-table-cell-3">Al Qaida Al Nooraniya</th>
+                <th class="u-border-4 u-border-palette-4-base u-table-cell"></th>
+              </tr>
+            </thead>
+            <tbody class="u-table-body">
+              <tr style="height: 50px;">
+                <td class="u-border-1 u-border-grey-30 u-palette-4-base u-table-cell u-table-cell-5"><b>Days</b>
+                </td>
+                <td class="u-border-1 u-border-grey-30 u-palette-4-base u-table-cell u-table-cell-6"><b> Duration&nbsp;</b>
+                </td>
+                <td class="u-border-1 u-border-grey-30 u-palette-4-base u-table-cell u-table-cell-7"><b> Total Classes in month&nbsp;</b>
+                </td>
+                <td class="u-border-1 u-border-grey-30 u-palette-4-base u-table-cell u-table-cell-8"><b> Monthly Fee Amount</b>
+                </td>
+              </tr>
+              <tr style="height: 50px;">
+                <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-9"> 3 days</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"> 30 min</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"> 12</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"> $55</td>
+              </tr>
+              <tr style="height: 49px;">
+                <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-13"> 6 days</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"> 30 min</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">24</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">$100<br>
+                </td>
+              </tr>
+              <tr style="height: 50px;">
+                <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-17"> SAT-SUN</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"> 30 min</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">8</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">$32</td>
+              </tr>
+              <tr style="height: 50px;">
+                <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-21"> SAT-SUN</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"> 45 min</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">8</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">$45</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="u-table u-table-responsive u-table-2">
+          <table class="u-table-entity">
+            <colgroup>
+              <col width="16.3%">
+              <col width="13.5%">
+              <col width="42.9%">
+              <col width="27.3%">
+            </colgroup>
+            <thead class="u-palette-4-base u-table-header u-table-header-2">
+              <tr style="height: 52px;">
+                <th class="u-border-4 u-border-palette-4-base u-table-cell"></th>
+                <th class="u-border-4 u-border-palette-4-base u-table-cell"></th>
+                <th class="u-align-center u-border-4 u-border-palette-4-base u-table-cell u-table-cell-27"> Quran Reading</th>
+                <th class="u-border-4 u-border-palette-4-base u-table-cell"></th>
+              </tr>
+            </thead>
+            <tbody class="u-table-body">
+              <tr style="height: 50px;">
+                <td class="u-border-1 u-border-grey-30 u-palette-4-base u-table-cell u-table-cell-29"><b>Days</b>
+                </td>
+                <td class="u-border-1 u-border-grey-30 u-palette-4-base u-table-cell u-table-cell-30"><b> Duration&nbsp;</b>
+                </td>
+                <td class="u-border-1 u-border-grey-30 u-palette-4-base u-table-cell u-table-cell-31"><b> Total Classes in month&nbsp;</b>
+                </td>
+                <td class="u-border-1 u-border-grey-30 u-palette-4-base u-table-cell u-table-cell-32"><b> Monthly Fee Amount</b>
+                </td>
+              </tr>
+              <tr style="height: 50px;">
+                <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-33"> 3 days</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"> 30 min</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"> 12</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"> $55</td>
+              </tr>
+              <tr style="height: 49px;">
+                <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-37"> 6 days</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"> 30 min</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">24</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">$100<br>
+                </td>
+              </tr>
+              <tr style="height: 50px;">
+                <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-41"> SAT-SUN</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"> 30 min</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">8</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">$32</td>
+              </tr>
+              <tr style="height: 50px;">
+                <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-45"> SAT-SUN</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"> 45 min</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">8</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">$45</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="u-table u-table-responsive u-table-3">
+          <table class="u-table-entity">
+            <colgroup>
+              <col width="16.3%">
+              <col width="13.5%">
+              <col width="42.9%">
+              <col width="27.3%">
+            </colgroup>
+            <thead class="u-palette-4-base u-table-header u-table-header-3">
+              <tr style="height: 52px;">
+                <th class="u-border-4 u-border-palette-4-base u-table-cell"></th>
+                <th class="u-border-4 u-border-palette-4-base u-table-cell"></th>
+                <th class="u-align-center u-border-4 u-border-palette-4-base u-table-cell u-table-cell-51"> Tajweed &amp; Tarteel</th>
+                <th class="u-border-4 u-border-palette-4-base u-table-cell"></th>
+              </tr>
+            </thead>
+            <tbody class="u-table-body">
+              <tr style="height: 50px;">
+                <td class="u-border-1 u-border-grey-30 u-palette-4-base u-table-cell u-table-cell-53"><b>Days</b>
+                </td>
+                <td class="u-border-1 u-border-grey-30 u-palette-4-base u-table-cell u-table-cell-54"><b> Duration&nbsp;</b>
+                </td>
+                <td class="u-border-1 u-border-grey-30 u-palette-4-base u-table-cell u-table-cell-55"><b> Total Classes in month&nbsp;</b>
+                </td>
+                <td class="u-border-1 u-border-grey-30 u-palette-4-base u-table-cell u-table-cell-56"><b> Monthly Fee Amount</b>
+                </td>
+              </tr>
+              <tr style="height: 50px;">
+                <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-57"> 3 days</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"> 30 min</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"> 12</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"> $55</td>
+              </tr>
+              <tr style="height: 49px;">
+                <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-61"> 6 days</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"> 30 min</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">24</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">$100<br>
+                </td>
+              </tr>
+              <tr style="height: 50px;">
+                <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-65"> SAT-SUN</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"> 30 min</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">8</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">$32</td>
+              </tr>
+              <tr style="height: 50px;">
+                <td class="u-border-1 u-border-grey-30 u-first-column u-grey-5 u-table-cell u-table-cell-69"> SAT-SUN</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell"> 45 min</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">8</td>
+                <td class="u-border-1 u-border-grey-30 u-table-cell">$45</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    
+    
+    {% include 'UserView/footer.html' %}
+  </body>
+</html>

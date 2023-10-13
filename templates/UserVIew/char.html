@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+    {% load static %}
+    {% load i18n %}
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="​Joud Islamic Academy, Under Construction, ​​Contact Us">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'css/Contact-Us.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" media="screen">
+    {% if LANGUAGE_CODE == 'ar' %}
+      <link rel="stylesheet" href="{% static 'css/ar.css' %}">
+    {% endif %}
+    <script class="u-script" type="text/javascript" src="{% static 'js/jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/nicepage.js' %}" defer=""></script>
+    <meta name="generator" content="Nicepage 4.7.1, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    
+    <style>
+      .u-nav-item a.u-nav-link, .menu-collapse a.u-nav-link {
+        padding: 10px 20px;
+      }
+
+      .header-div a {
+        width: 100px;
+        height: 100px;
+        display: inline;
+      }
+
+      .header-div img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .header-div h1, .header-div a, .header-div li, .header-div li > form {
+        display: inline;
+        margin-top: 10px;
+      }
+
+      .header-div button{
+        padding: 10px;
+        width: 75px;
+        border: 2px solid gold;
+        color: gold;
+        background-color: #fff;
+      }
+
+      .header-div { 
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+      @media (max-width: 785px) {
+        .header-div{
+          justify-content: center;
+          align-items: center;
+        }
+        }
+    </style>
+    
+    
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "Joud Islamic Academy",
+		"logo": "images/JoudLogo31.gif"
+}</script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Contact Us">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+</head>
+<body class="u-body u-xl-mode">
+    <header class="u-clearfix u-header u-header" id="sec-db29">
+        <div class="u-clearfix u-sheet u-sheet-1">
+          <div class="header-div">
+            <a href="{% url 'home' %}" data-image-width="782" data-image-height="790">
+              <img src="{% static 'images/JoudLogo31.gif' %}">
+            </a>
+            <h1> Joud Islamic Academy</h1>
+            <li>
+    <form action="{% url 'set_language' %}" method="post">
+      {% csrf_token %}
+      {% get_current_language as LANGUAGE_CODE %}
+      <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}">
+      {% if LANGUAGE_CODE == 'ar' %}
+        <button type='submit' name='language' value='en'>
+          <span class="label"></span>English
+        </button>
+      {% else %}
+        <button type='submit' name='language' value='ar'>
+          <span class="label"></span>عربي
+        </button>
+      {% endif %}
+    </form>
+  </li>
+          </div>
+          <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+            <div class="menu-collapse" style="font-size: 1.5rem;">
+              <a class="u-button-style u-nav-link" href="#">
+                <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+                <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+  </g></svg>
+              </a>
+            </div>
+            <div class="u-custom-menu u-nav-container">
+              
+              <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'home' %}">{% trans 'Home' %}</a>
+  </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'courses' %}">{% trans 'Courses' %}</a>
+  <div class="u-nav-popup">
+  <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2">
+    {% for course in courses %}
+    <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="Al-Qaida-Al-Nooraniya.html">{{ course.name }}</a></li>
+    {% endfor %}
+  </ul>
+  </div>
+  </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'faq' %}">{% trans 'FAQ' %}</a>
+  </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'register' %}" target="_blank">{% trans 'Registration and Fees' %}</a>
+  </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'about' %}">{% trans 'About Us' %}</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link u-white">Organizational Structure</a>
+  </li></ul>
+  </div>
+  </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'contact' %}">{% trans 'Contact Us' %}</a>
+  </li></ul>
+            </div>
+            <div class="u-custom-menu u-nav-container-collapse">
+              <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+                <div class="u-inner-container-layout u-sidenav-overflow">
+                  <div class="u-menu-close"></div>
+                  <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">{% trans 'Home' %}</a>
+  </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'courses' %}">{% trans 'Courses' %}</a>
+  <div class="u-nav-popup">
+  <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-5">
+    {% for course in courses %}
+    <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="Al-Qaida-Al-Nooraniya.html">{{ course.name }}</a></li>
+    {% endfor %}
+  </ul>
+  </div>
+  </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'faq' %}">{% trans 'FAQ' %}</a>
+  </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'register' %}">{% trans 'Registration and Fees' %}</a>
+  </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'about' %}">{% trans 'About Us' %}</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-6"><li class="u-nav-item"><a class="u-button-style u-nav-link">Organizational Structure</a>
+  </li></ul>
+  </div>
+  </li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'contact' %}">{% trans 'Contact Us' %}</a>
+  </li></ul>
+              </div>
+              </div>
+              <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+          </nav>
+      </div></header>
+
+
+
+      {% include 'UserView/footer.html' %}
+    </body>
+  </html>

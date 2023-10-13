@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html style="font-size: 16px;">
+    {% load static %}
+    {% load i18n %}
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    {% get_current_language as LANGUAGE_CODE %}
+    <meta name="keywords" content="Learn Everyday, Join online courses today, Train Your Brain Today!, Learn to enjoyevery minute of your life., Online Learning, Innovations in Online Learning, Education and Learning, 01, 02, 03, 04, Contact Us">
+    <meta name="description" content="">
+    <meta name="page_type" content="np-template-header-footer-from-plugin">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/nicepage.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'css/Home.css' %}" media="screen">
+    {% if LANGUAGE_CODE == 'ar' %}
+      <link rel="stylesheet" href="{% static 'css/ar.css' %}">
+    {% endif %}
+    <script class="u-script" type="text/javascript" src="{% static 'js/jquery.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/nicepage.js' %}" defer=""></script>
+    <meta name="generator" content="Nicepage 4.7.1, nicepage.com">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Oswald:200,300,400,500,600,700">
+    
+    
+    
+    
+    
+    <style>
+      .header-div a {
+        width: 100px;
+        height: 100px;
+        display: inline;
+      }
+
+      .header-div img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .header-div h1, .header-div a, .header-div li, .header-div li > form {
+        display: inline;
+        margin-top: 10px;
+      }
+
+      .header-div button{
+        padding: 10px;
+        width: 75px;
+        border: 2px solid gold;
+        color: gold;
+        background-color: #fff;
+      }
+
+      .header-div { 
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+      @media (max-width: 785px) {
+        .header-div{
+          justify-content: center;
+          align-items: center;
+        }
+        }
+    </style>
+    
+    <script type="application/ld+json">
+      {
+          "@context": "http://schema.org",
+          "@type": "Organization",
+          "name": "Joud Islamic Academy",
+          "logo": "{% static 'images/JoudLogo31.gif' %}",
+          "languageSwitcher": "<li><form action='{% url 'set_language' %}' method='post'>{% csrf_token %}{% get_current_language as LANGUAGE_CODE %}<input name='next' type='hidden' value='{{ request.get_full_path|slice:'3:' }}'>{% if LANGUAGE_CODE == 'ar' %}<button type='submit' name='language' value='en' class='icon solid fa-language'><span class='label'></span>English</button>{% else %}<button type='submit' name='language' value='ar' class='icon solid fa-language'><span class='label'></span>عربي</button>{% endif %}</form></li>"
+      }
+      </script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="Home">
+    <meta property="og:description" content="">
+    <meta property="og:type" content="website">
+  </head>
+  <body class="u-body u-xl-mode">
+    <header class="u-clearfix u-header u-header" id="sec-db29">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="header-div">
+          <a href="{% url 'home' %}" data-image-width="782" data-image-height="790">
+            <img src="{% static 'images/JoudLogo31.gif' %}">
+          </a>
+          <h1> Joud Islamic Academy</h1>
+          <li>
+  <form action="{% url 'set_language' %}" method="post">
+    {% csrf_token %}
+    {% get_current_language as LANGUAGE_CODE %}
+    <input name="next" type="hidden" value="{{ request.get_full_path|slice:'3:' }}">
+    {% if LANGUAGE_CODE == 'ar' %}
+      <button type='submit' name='language' value='en'>
+        <span class="label"></span>English
+      </button>
+    {% else %}
+      <button type='submit' name='language' value='ar'>
+        <span class="label"></span>عربي
+      </button>
+    {% endif %}
+  </form>
+</li>
+        </div>
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1.5rem;">
+            <a class="u-button-style u-nav-link" href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use></svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"><g><rect y="1" width="16" height="2"></rect><rect y="7" width="16" height="2"></rect><rect y="13" width="16" height="2"></rect>
+</g></svg>
+            </a>
+          </div>
+          <div class="u-custom-menu u-nav-container">
+            
+            <ul class="u-nav u-unstyled u-nav-1"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'home' %}">{% trans 'Home' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'courses' %}">{% trans 'Courses' %}</a>
+<div class="u-nav-popup">
+<ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-2">
+  {% for course in courses %}
+  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'course' course.id %}">{{ course.name }}</a></li>
+  {% endfor %}
+</ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'faq' %}">{% trans 'FAQ' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'register' %}">{% trans 'Registration and Fees' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'about' %}">{% trans 'About Us' %}</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-3"><li class="u-nav-item"><a class="u-button-style u-nav-link u-white">Organizational Structure</a>
+</li></ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'contact' %}">{% trans 'Contact Us' %}</a>
+</li></ul>
+          </div>
+          <div class="u-custom-menu u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-4"><li class="u-nav-item"><a class="u-button-style u-nav-link" href="Home.html">{% trans 'Home' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'courses' %}">{% trans 'Courses' %}</a>
+<div class="u-nav-popup">
+<ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-5">
+  {% for course in courses %}
+  <li class="u-nav-item"><a class="u-button-style u-nav-link u-white" href="{% url 'course' course.id %}">{{ course.name }}</a></li>
+  {% endfor %}
+</ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'faq' %}">{% trans 'FAQ' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'register' %}">{% trans 'Registration and Fees' %}</a>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'about' %}">{% trans 'About Us' %}</a><div class="u-nav-popup"><ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10 u-nav-6"><li class="u-nav-item"><a class="u-button-style u-nav-link">Organizational Structure</a>
+</li></ul>
+</div>
+</li><li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'contact' %}">{% trans 'Contact Us' %}</a>
+</li></ul>
+            </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </div>
+        </nav>
+    </div></header>
+    <section class="u-align-left u-clearfix u-image u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-section-1" id="sec-832e" data-image-width="1000" data-image-height="442">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="u-image u-image-circle u-image-1" alt="" data-image-width="650" data-image-height="651"></div>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-2" id="carousel_607d">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
+                <div class="u-container-layout u-container-layout-1">
+                  <div class="u-palette-4-base u-shape u-shape-circle u-shape-1"></div>
+                  <div alt="" class="u-image u-image-circle u-image-1" data-image-width="626" data-image-height="626"></div>
+                  <div class="u-shape u-shape-svg u-text-palette-4-base u-shape-2">
+                    <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 50" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-7f47"></use></svg>
+                    <svg class="u-svg-content" viewBox="0 0 160 50" x="0px" y="0px" id="svg-7f47" style="enable-background:new 0 0 160 50;"><path d="M133,26.7c-13.9,9.7-25.8,9.7-39.8,0c-9.1-6.3-16.8-6.3-25.9,0c-13.8,9.6-25.1,9.6-38.9,0c-9.2-6.4-15.4-6.4-24.6,0L0,22
+	c11.2-7.8,20.6-8.1,32.2,0c11,7.6,19,8.5,31.3,0c11.6-8.1,22.4-7.7,33.5,0c11.4,8,20.3,8.3,32.2,0c11.6-8.1,19.2-8.1,30.8,0
+	l-3.8,4.7C146.9,20.2,142.3,20.2,133,26.7z M133,10.8c-13.9,9.7-25.8,9.7-39.8,0c-9.1-6.3-16.8-6.3-25.9,0
+	c-13.8,9.6-25.1,9.6-38.9,0c-9.2-6.4-15.4-6.4-24.6,0L0,6.1c11.2-7.8,20.6-8.1,32.2,0c11,7.6,19,8.5,31.3,0C75.1-2,85.9-1.6,97,6.1
+	c11.4,8,20.3,8.3,32.2,0C140.8-2,148.4-2,160,6.1l-3.8,4.7C146.9,4.3,142.3,4.3,133,10.8z M32.2,38c11,7.6,19,8.5,31.3,0
+	c11.6-8.1,22.4-7.7,33.5,0c11.4,8,20.3,8.3,32.2,0c11.6-8.1,19.2-8.1,30.8,0l-3.8,4.7c-9.3-6.5-13.9-6.5-23.3,0
+	c-13.9,9.7-25.8,9.7-39.8,0c-9.1-6.3-16.8-6.3-25.9,0c-13.8,9.6-25.1,9.6-38.9,0c-9.2-6.4-15.4-6.4-24.6,0L0,38
+	C11.2,30.2,20.6,29.9,32.2,38z"></path></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
+                <div class="u-container-layout u-container-layout-2">
+                  <h4 class="u-text u-text-palette-4-dark-2 u-text-1">{% trans 'Get access to high quality learning!' %}</h4>
+                  <h1 class="u-text u-text-2">{% trans 'Join online courses ' %}<span style="font-weight: 700;">{% trans 'today' %}</span>
+                  </h1>
+                  <p class="u-text u-text-grey-50 u-text-3">
+                    {% trans 'Flexibility and ideal for people with a busy schedule.' %}
+                    {% trans 'A 1 on 1 live web based meeting with telecommunication application that' %}
+                    {% trans 'provides internet voice calls and screen sharing between computers,' %}
+                    {% trans ' tablets and mobile devices.' %}
+                    {% trans 'It enables students to interact with real life teachers ' %}
+                    {% trans 'from any computer with internet access.' %}
+                    {% trans 'With us you can learn * Basic Noorani Qaida Course' %}
+                    {% trans 'Tajweed Al-Quran & makharij Al-Huroof' %}
+                    {% trans 'Quran memorization' %}
+                    {% trans 'Reading with Tilawat' %}
+                    {% trans 'Reading with Tarteel' %}
+                    {% trans 'Sanad Riwayah Hafs An Asim By the way of Shatibiyah' %}
+                    {% trans 'Sanad Al-Qira’at Al-Ashir Al-Sofhra By the way of Shatibiyah' %}
+                    {% trans 'Tuhfat Ul-Atfaal & Al-Jazriah' %}
+                    {% trans 'Tuhfat Al-Shatibih' %}
+                    {% trans 'Quran for non-Arabic speaking' %}
+                    {% trans 'Islamic study for kids' %}
+                    {% trans 'Islamic study for adults' %}                </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-palette-4-base u-section-3" id="carousel_79bd">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-gutter-22 u-layout-wrap u-layout-wrap-1">
+          <div class="u-gutter-0 u-layout">
+            <div class="u-layout-row">
+              <div class="u-container-style u-layout-cell u-shape-rectangle u-size-30 u-layout-cell-1">
+                <div class="u-container-layout u-container-layout-1">
+                  <div class="u-shape u-shape-svg u-text-white u-shape-1">
+                    <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 50" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-6f73"></use></svg>
+                    <svg class="u-svg-content" viewBox="0 0 160 50" x="0px" y="0px" id="svg-6f73" style="enable-background:new 0 0 160 50;"><path d="M133,26.7c-13.9,9.7-25.8,9.7-39.8,0c-9.1-6.3-16.8-6.3-25.9,0c-13.8,9.6-25.1,9.6-38.9,0c-9.2-6.4-15.4-6.4-24.6,0L0,22
+	c11.2-7.8,20.6-8.1,32.2,0c11,7.6,19,8.5,31.3,0c11.6-8.1,22.4-7.7,33.5,0c11.4,8,20.3,8.3,32.2,0c11.6-8.1,19.2-8.1,30.8,0
+	l-3.8,4.7C146.9,20.2,142.3,20.2,133,26.7z M133,10.8c-13.9,9.7-25.8,9.7-39.8,0c-9.1-6.3-16.8-6.3-25.9,0
+	c-13.8,9.6-25.1,9.6-38.9,0c-9.2-6.4-15.4-6.4-24.6,0L0,6.1c11.2-7.8,20.6-8.1,32.2,0c11,7.6,19,8.5,31.3,0C75.1-2,85.9-1.6,97,6.1
+	c11.4,8,20.3,8.3,32.2,0C140.8-2,148.4-2,160,6.1l-3.8,4.7C146.9,4.3,142.3,4.3,133,10.8z M32.2,38c11,7.6,19,8.5,31.3,0
+	c11.6-8.1,22.4-7.7,33.5,0c11.4,8,20.3,8.3,32.2,0c11.6-8.1,19.2-8.1,30.8,0l-3.8,4.7c-9.3-6.5-13.9-6.5-23.3,0
+	c-13.9,9.7-25.8,9.7-39.8,0c-9.1-6.3-16.8-6.3-25.9,0c-13.8,9.6-25.1,9.6-38.9,0c-9.2-6.4-15.4-6.4-24.6,0L0,38
+	C11.2,30.2,20.6,29.9,32.2,38z"></path></svg>
+                  </div>
+                  <h1 class="u-align-left u-text u-text-1">{% trans 'Tahfeez Quran' %}<br>{% trans 'Behave Your Brain' %} &amp; {% trans 'Soul Today' %}
+                  </h1>
+                  <p class="u-align-justify u-text u-text-2">
+                    {% trans 'Memorizing the Quran is the best you can do!' %}&nbsp;
+                    {% trans 'You will be rewarded the ten good deeds for every single letter' %}
+                    {% trans 'of the Quran you will read and memorize' %}
+                    {% trans 'If you would like your ethics to be like the Prophets,' %}
+                    {% trans ' you have to memorize the Quran.' %}
+                    {% trans 'All the stories of the successors ' %}
+                    {% trans 'and ancestors are preserved in the Quran.' %}
+                  </p>
+                </div>
+              </div>
+              <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-2">
+                <div class="u-container-layout u-valign-bottom u-container-layout-2" src="">
+                  <img class="u-align-center u-image u-image-contain u-image-default u-image-1" data-image-width="900" data-image-height="880" src="{% static 'images/kisspng-quran-child-vector-graphics-muslim-stock-illustrat-5ce2db81cab242.0219876615583712018303.jpg' %}">
+                  <div class="u-shape u-shape-svg u-text-white u-shape-2">
+                    <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 50" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-6f73"></use></svg>
+                    <svg class="u-svg-content" viewBox="0 0 160 50" x="0px" y="0px" id="svg-6f73" style="enable-background:new 0 0 160 50;"><path d="M133,26.7c-13.9,9.7-25.8,9.7-39.8,0c-9.1-6.3-16.8-6.3-25.9,0c-13.8,9.6-25.1,9.6-38.9,0c-9.2-6.4-15.4-6.4-24.6,0L0,22
+	c11.2-7.8,20.6-8.1,32.2,0c11,7.6,19,8.5,31.3,0c11.6-8.1,22.4-7.7,33.5,0c11.4,8,20.3,8.3,32.2,0c11.6-8.1,19.2-8.1,30.8,0
+	l-3.8,4.7C146.9,20.2,142.3,20.2,133,26.7z M133,10.8c-13.9,9.7-25.8,9.7-39.8,0c-9.1-6.3-16.8-6.3-25.9,0
+	c-13.8,9.6-25.1,9.6-38.9,0c-9.2-6.4-15.4-6.4-24.6,0L0,6.1c11.2-7.8,20.6-8.1,32.2,0c11,7.6,19,8.5,31.3,0C75.1-2,85.9-1.6,97,6.1
+	c11.4,8,20.3,8.3,32.2,0C140.8-2,148.4-2,160,6.1l-3.8,4.7C146.9,4.3,142.3,4.3,133,10.8z M32.2,38c11,7.6,19,8.5,31.3,0
+	c11.6-8.1,22.4-7.7,33.5,0c11.4,8,20.3,8.3,32.2,0c11.6-8.1,19.2-8.1,30.8,0l-3.8,4.7c-9.3-6.5-13.9-6.5-23.3,0
+	c-13.9,9.7-25.8,9.7-39.8,0c-9.1-6.3-16.8-6.3-25.9,0c-13.8,9.6-25.1,9.6-38.9,0c-9.2-6.4-15.4-6.4-24.6,0L0,38
+	C11.2,30.2,20.6,29.9,32.2,38z"></path></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-section-4" id="carousel_f056">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-container-style u-layout-cell u-size-18 u-layout-cell-1">
+                <div class="u-container-layout u-container-layout-1">
+                  <h2 class="u-align-left u-text u-text-1">
+                    <span style="font-weight: 700;">{% trans 'Learn to enjoy' %}</span>
+                    <br>{% trans 'every minute of your life.' %}
+                  </h2>
+                </div>
+              </div>
+              <div class="u-align-justify u-container-style u-layout-cell u-size-42 u-layout-cell-2">
+                <div class="u-container-layout u-container-layout-2">
+                  <img class="u-expanded-width u-image u-image-default u-image-1" src="{% static 'images/JoudWay.jpg' %}" alt="" data-image-width="820" data-image-height="490">
+                  <div class="u-shape u-shape-svg u-text-palette-4-base u-shape-1">
+                    <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 50" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1a12"></use></svg>
+                    <svg class="u-svg-content" viewBox="0 0 160 50" x="0px" y="0px" id="svg-1a12" style="enable-background:new 0 0 160 50;"><path d="M133,26.7c-13.9,9.7-25.8,9.7-39.8,0c-9.1-6.3-16.8-6.3-25.9,0c-13.8,9.6-25.1,9.6-38.9,0c-9.2-6.4-15.4-6.4-24.6,0L0,22
+	c11.2-7.8,20.6-8.1,32.2,0c11,7.6,19,8.5,31.3,0c11.6-8.1,22.4-7.7,33.5,0c11.4,8,20.3,8.3,32.2,0c11.6-8.1,19.2-8.1,30.8,0
+	l-3.8,4.7C146.9,20.2,142.3,20.2,133,26.7z M133,10.8c-13.9,9.7-25.8,9.7-39.8,0c-9.1-6.3-16.8-6.3-25.9,0
+	c-13.8,9.6-25.1,9.6-38.9,0c-9.2-6.4-15.4-6.4-24.6,0L0,6.1c11.2-7.8,20.6-8.1,32.2,0c11,7.6,19,8.5,31.3,0C75.1-2,85.9-1.6,97,6.1
+	c11.4,8,20.3,8.3,32.2,0C140.8-2,148.4-2,160,6.1l-3.8,4.7C146.9,4.3,142.3,4.3,133,10.8z M32.2,38c11,7.6,19,8.5,31.3,0
+	c11.6-8.1,22.4-7.7,33.5,0c11.4,8,20.3,8.3,32.2,0c11.6-8.1,19.2-8.1,30.8,0l-3.8,4.7c-9.3-6.5-13.9-6.5-23.3,0
+	c-13.9,9.7-25.8,9.7-39.8,0c-9.1-6.3-16.8-6.3-25.9,0c-13.8,9.6-25.1,9.6-38.9,0c-9.2-6.4-15.4-6.4-24.6,0L0,38
+	C11.2,30.2,20.6,29.9,32.2,38z"></path></svg>
+                  </div>
+                  <p class="u-text u-text-2"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="u-clearfix u-palette-4-base u-section-5" id="carousel_3c49">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+          <div class="u-layout">
+            <div class="u-layout-row">
+              <div class="u-layout-cell u-left-cell u-size-26 u-layout-cell-1">
+                <div class="u-container-layout u-container-layout-1">
+                  <h1 class="u-text u-text-1"><b><i>
+                        <span style="font-style: normal;">{% trans 'Online' %}</span></i></b>{% trans 'Learning' %}
+                  </h1>
+                  <p class="u-text u-text-2"><b>{% trans 'Seven Benefits of Online Learning' %}</b>
+                    <br>
+                    <ul>
+                        <li>{% trans 'Added Flexibility and Self-Paced Learning.' %}</li>
+                        <li>{% trans 'Better Time Management.' %}</li>
+                        <li>{% trans 'Demonstrated Self-Motivation.' %}</li>
+                        <li>{% trans 'Improved Virtual Communication and Collaboration' %}</li>
+                        <li>{% trans 'A Broader, Global Perspective.' %}</li>
+                        <li>{% trans 'Refined Critical-thinking Skills.' %}</li>
+                        <li>{% trans 'New Technical Skills.' %}</li>
+                    </ul>                  </p>
+                </div>
+              </div>
+              <div class="u-align-left u-container-style u-image u-layout-cell u-right-cell u-size-34 u-image-1" data-image-width="450" data-image-height="428">
+                <div class="u-container-layout u-container-layout-2"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% include 'UserView/footer.html' %}
+  </body>
+</html>
